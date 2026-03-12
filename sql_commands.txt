@@ -1,0 +1,45 @@
+-- CREATE DATABASE IF NOT EXISTS northwestern_geoguessr;
+-- USE northwestern_geoguessr;
+
+-- CREATE TABLE users (
+--     id INT AUTO_INCREMENT PRIMARY KEY,
+--     username VARCHAR(50) UNIQUE NOT NULL,
+--     email VARCHAR(255) UNIQUE NOT NULL,
+--     score INT DEFAULT 0,
+--     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+
+
+-- CREATE TABLE photos (
+--     id VARCHAR(36) PRIMARY KEY,
+--     user_id INT,
+--     s3_key VARCHAR(500) NOT NULL,
+--     s3_url TEXT NOT NULL,
+--     latitude DECIMAL(10, 8) NOT NULL,
+--     longitude DECIMAL(11, 8) NOT NULL,
+--     caption TEXT,
+--     is_approved TINYINT(1) DEFAULT 0,
+--     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+-- );
+
+
+-- CREATE TABLE game_sessions (
+--     id VARCHAR(36) PRIMARY KEY,
+--     user_id INT,
+--     photo_id VARCHAR(36),
+--     guessed_lat DECIMAL(10, 8),
+--     guessed_lng DECIMAL(11, 8),
+--     distance_meters FLOAT,
+--     score INT,
+--     played_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL,
+--     FOREIGN KEY (photo_id) REFERENCES photos(id) ON DELETE CASCADE
+-- );
+
+
+
+-- CREATE INDEX idx_score ON game_sessions(score DESC);
+-- CREATE INDEX idx_approved ON photos(is_approved);
+
+
