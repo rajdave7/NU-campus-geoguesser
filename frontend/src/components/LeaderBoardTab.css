@@ -1,0 +1,120 @@
+.leaderboard-tab {
+  color: white;
+}
+
+.leaderboard-header {
+  margin-bottom: 20px;
+}
+
+.leaderboard-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 30px;
+}
+
+.leaderboard-header p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.leaderboard-message {
+  padding: 16px 0;
+  font-size: 16px;
+}
+
+.error-message {
+  color: #ffd6d6;
+  font-weight: 600;
+}
+
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.leaderboard-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.medal {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.medal.gold {
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.16);
+}
+
+.medal.silver {
+  color: #d1d5db;
+  background: rgba(209, 213, 219, 0.16);
+}
+
+.medal.bronze {
+  color: #cd7f32;
+  background: rgba(205, 127, 50, 0.16);
+}
+
+.medal.default {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rank-number {
+  min-width: 24px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.player-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.player-name {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.player-id {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.leaderboard-score {
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+}
+
+@media (max-width: 700px) {
+  .leaderboard-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .leaderboard-score {
+    padding-left: 48px;
+  }
+}
