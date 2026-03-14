@@ -160,4 +160,27 @@
   .input-group input {
     width: 100%;
   }
+
+
+  .map-legend {
+  font-size: 13px;
+  font-weight: 400;
+  margin-left: 12px;
+  display: inline-flex;
+  gap: 12px;
+}
+
+  .legend-guess {
+    color: #e53e3e;
+  }
+
+  .legend-actual {
+    color: #38a169;
+  }
+
+  .player-info {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
 }

@@ -22,7 +22,7 @@ exports.handler = async (event) => {
     const [countRows] = await db.execute(
       `SELECT COUNT(*) AS count
        FROM photos
-       WHERE is_approved = 1`
+       WHERE is_approved = 1`,
     );
 
     const totalApproved = countRows[0].count;
@@ -35,12 +35,12 @@ exports.handler = async (event) => {
     const randomOffset = Math.floor(Math.random() * totalApproved);
 
     // Step 3: fetch one approved photo at that offset
-    const [rows] = await db.execute(
+    // edited to use db.query instead of db.execute since we are using a dynamic offset
+    const [rows] = await db.query(
       `SELECT id, s3_url, caption
-       FROM photos
-       WHERE is_approved = 1
-       LIMIT 1 OFFSET ?`,
-      [randomOffset]
+   FROM photos
+   WHERE is_approved = 1
+   LIMIT 1 OFFSET ${randomOffset}`,
     );
 
     if (!rows || rows.length === 0) {
@@ -57,10 +57,12 @@ exports.handler = async (event) => {
         caption: photo.caption || null,
       },
     });
-
   } catch (err) {
     console.error("Get random photo error:", err);
-    return respond(500, { error: "Internal server error", detail: err.message });
+    return respond(500, {
+      error: "Internal server error",
+      detail: err.message,
+    });
   } finally {
     if (db) {
       await db.end();
