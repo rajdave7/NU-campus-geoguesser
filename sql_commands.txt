@@ -42,4 +42,15 @@
 -- CREATE INDEX idx_score ON game_sessions(score DESC);
 -- CREATE INDEX idx_approved ON photos(is_approved);
 
+-- select * from users;
 
+-- 
+-- SET SQL_SAFE_UPDATES = 0;
+-- UPDATE northwestern_geoguessr.photos SET is_approved = 1;
+-- SET SQL_SAFE_UPDATES = 1;
+-- select * from photos;
+-- delete from photos where is_approved = 1;
+
+
+
+-- SELECT id FROM northwestern_geoguessr.photos LIMIT 1;
